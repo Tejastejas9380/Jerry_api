@@ -10,9 +10,10 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => res.json({ message: "AI server is running" }));
+app.get("/", (_r, res) => res.json({ message: "AI server running" }));
 app.use("/api", require("./routes/AiBtnRoute"));
+app.use("/api", require("./routes/ImageGenRoute"));
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+app.listen(PORT, () =>
+  console.log(`Server listening at http://localhost:${PORT}`)
+);
