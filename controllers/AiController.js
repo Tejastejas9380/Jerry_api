@@ -6,7 +6,7 @@ const askAI = async (req, res) => {
     const { prompt = "Hello" } = req.body;
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
-      contents: prompt,
+      contents: `your name is JERRY created by TEJAS : ${prompt}`,
     });
     const answer = response.text;
     console.log(answer);

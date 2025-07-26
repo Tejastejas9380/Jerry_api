@@ -10,7 +10,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => res.json({ message: "AI server 🚀" }));
+app.get("/", (req, res) => res.json({ message: "AI server is running" }));
 app.use("/api", require("./routes/AiBtnRoute"));
 
 app.listen(PORT, () => {
